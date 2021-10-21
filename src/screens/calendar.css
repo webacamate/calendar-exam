@@ -1,0 +1,19 @@
+.react-datetime-picker input:focus{
+    outline: none;
+}
+.react-datetime-picker__wrapper{
+    border: 0px solid gray !important;
+}
+.rdrDefinedRangesWrapper{
+    width: 0 !important;
+    background-color: black; 
+}
+.rdrMonthAndYearWrapper{
+    height: 0 !important;
+    padding-top: 0 !important;
+    overflow: hidden;
+}
+.rdrMonths{
+    display: flex !important;
+    flex-wrap: wrap;
+}

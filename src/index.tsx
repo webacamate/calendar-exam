@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import { Calendar } from './screens/Calendar';
+import { CalendarApp } from './screens/Calendar';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calendar />
+    <CalendarApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
