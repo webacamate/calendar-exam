@@ -3,17 +3,16 @@ import './calendar.css';
 import { useState } from 'react';
 import { DateInput } from '../components/DateInput';
 import { useCalendar } from '../hooks/useCalendar';
-import moment from 'moment';
 
 
 export const CalendarApp = () => {
-    const [column, setColumn] = useState('2');
+    const [column, setColumn] = useState('3');
     const {start, end, range, months, setStartDate, setEndDate} =useCalendar();
     const columnsSize=333*parseInt(column);
 
-    const columsnInput=(columns:number)=>{        
+    const columsnInput=()=>{        
         let options=[];
-        for (let index = 1; index <= columns; index++) {
+        for (let index = 1; index <= 10; index++) {
             options.push(
                 <option value={`${index}`} key={index}>{index}</option>)
         }
@@ -29,8 +28,18 @@ export const CalendarApp = () => {
     const form=<form style={{display:'flex'}}>
             <DateInput title='Start' date={start} setDate={setStartDate}/>
             <DateInput title='End' date={end} setDate={setEndDate}/>
-            {columsnInput(10)}
+            {columsnInput()}
         </form>
+    const calendarView=<div style={{width:`${columnsSize}px`}}>
+            <DateRangePicker
+                ranges={[range]}
+                onChange={()=>{}}
+                showDateDisplay={false}
+                showPreview={false}
+                months={months}
+                direction='horizontal'
+            />
+        </div>;
 
     return (
         <div className='container'>
@@ -38,16 +47,7 @@ export const CalendarApp = () => {
             <h1>Calendar</h1>
             <hr/>
             {form}
-            <div style={{width:`${columnsSize}px`}}>
-                <DateRangePicker
-                    ranges={[range]}
-                    onChange={()=>{}}
-                    showDateDisplay={false}
-                    showPreview={false}
-                    months={months}
-                    direction='horizontal'
-                />
-        </div>
+            {calendarView}
         </div>
     )
 }

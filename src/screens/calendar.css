@@ -17,3 +17,6 @@
     display: flex !important;
     flex-wrap: wrap;
 }
+.rdrDay{
+    cursor: auto !important;
+}
