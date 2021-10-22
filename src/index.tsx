@@ -4,10 +4,12 @@ import reportWebVitals from './reportWebVitals';
 import { CalendarApp } from './screens/Calendar';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import { Profile } from './components/Profile';
 
 ReactDOM.render(
   <React.StrictMode>
     <CalendarApp />
+    <Profile/>
   </React.StrictMode>,
   document.getElementById('root')
 );
